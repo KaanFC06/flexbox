@@ -1,0 +1,71 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    padding: 20px;
+}
+
+/* Ana kapsayıcımızı ortalıyoruz ve maksimum genişlik veriyoruz */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.header {
+    display: flex;                /* Flexbox özelliğini aktif ediyoruz */
+    flex-direction: column;       /* Öğeleri alt alta (dikey) sıralıyoruz */
+    align-items: center;          /* Yatayda ortalıyoruz */
+    justify-content: center;      /* Dikeyde ortalıyoruz */
+    background-color: #ffffff;
+    padding: 40px 20px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    text-align: center;
+}
+
+.header h1 {
+    font-size: 2.5rem;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.header p {
+    font-size: 1.1rem;
+    color: #7f8c8d;
+}
+.card-container {
+    display: flex;                /* Kartları yan yana getirmek için Flexbox */
+    flex-wrap: wrap;              /* Sığmadığı durumlarda alt satıra geçmesine izin ver */
+    gap: 20px;                    /* Kartlar arasında boşluk bırakır */
+    justify-content: space-between; /* Kartları yatayda dengeli dağıtır */
+}
+
+.card {
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    
+    /* 3 kartın yan yana sığması için genişlik hesabı:
+       Toplam %100 genişlikten aradaki 2 boşluğu (20px * 2 = 40px) çıkarıp 3'e bölüyoruz. */
+    flex: 1 1 calc(33.333% - 20px); 
+    min-width: 280px;             /* Çok küçülürlerse daralmayı sınırla */
+}
+
+.card h3 {
+    font-size: 1.5rem;
+    color: #34495e;
+    margin-bottom: 15px;
+}
+
+.card p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.5;
+}
